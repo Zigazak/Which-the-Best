@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    background-color: rgb(244, 240, 236);
+}
+header {
+    color:rgb(39, 33, 45);
+    width:100%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding:32px;
+    font-size: 34px;
+    text-transform: uppercase;
+    background-color: lightsteelblue;
+    border-bottom:5px solid rgb(31, 31, 78);
+    position: absolute; top: 0;    
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: resize;
+}
+
+.container{
+    text-align:center;
+    padding:auto;
+}
+.thumbnail { 
+    z-index:0; 
+    cursor: pointer; 
+    -webkit-transition-property: all; 
+    -webkit-transition-duration: 0.5s; 
+    -webkit-transition-timing-function: ease; 
+    } 
+
+.thumbnail:hover { 
+    transform: scale(1.1); 
+    }
+
+.thumbnail:active { 
+    transform: scale(1.4); 
+    }
+
+.large{
+    padding:4em;
+}
+
+.medium{
+    padding:1em;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    }
+    
+.container img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    }
+
+button:hover {
+    background-color:rgba(67, 115, 255, 0.323);
+    transform: scale(1.2);
+    border-radius: 5px;
+}
+button:active .submit:active{
+    background-color: brown;
+    transform: scale(1.5); 
+}
+
+.clickers {
+    text-align: center;   
+}
+
+.left_button {
+    margin-right: 20%;
+    
+}
+
+.right_button{
+    margin-left: 20%;
+}
+
+.Item_adding {
+    text-align: center;
+}
+
+.le_table {
+    table-layout:auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label{
+    font-weight: bold;
+}
+
+.hit_em:hover{
+    transform: scale(1.2);
+    background-color:rgba(67, 115, 255, 0.323);
+    border-radius: 5px;
+
+}
+
+.hit_em:active {
+
+}
