@@ -1,11 +1,18 @@
 
 let arr = []
+let num = 0
+
 function add(input) {
     let temp = []
         temp.push(input)
         temp.push(1000)
         arr.push(temp)
     return arr
+}
+
+function update_num(){
+    num = Math.round(Math.random() * (arr.length-2))
+    return num
 }
 
 function remove(input){
@@ -18,7 +25,7 @@ function remove(input){
 
 function empty() {
     arr = []
-    return arr
+    update()
 }
 
 function change_the_score(input_1, input_2, winner){
@@ -35,21 +42,61 @@ function change_the_score(input_1, input_2, winner){
 }
 
 var inp_1 = document.getElementById("add_to_list");
+var inp_2 = document.getElementById("remove_to_list");
 var out_1 = document.getElementById("1_name");
 var subin = document.getElementById("1_name");
+var myTable = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+var bt_1 = document.getElementById("btn_1")
+var bt_2 = document.getElementById("btn_2")
+var up = document.getElementById("upp");
 
-
-function submitted_good(){
-    add(inp_1);
-    document.getElementById("1_name").innerHTML = arr[1][0]
-    document.getElementById("1_score").innerHTML = arr[1][1]
-    document.getElementById("2_name").innerHTML = arr[2][0]
-    document.getElementById("2_score").innerHTML = arr[2][1]
-
+function upper(){
+    document.getElementById("btn_1").innerHTML = arr[num][0]
+    document.getElementById("btn_2").innerHTML = arr[num + 1][0]
 }
 
-document.getElementById("1_name").innerHTML = arr[1][0]
-document.getElementById("1_score").innerHTML = arr[1][1]
+function update() {
+    myTable.innerHTML = ""
+    for (let i = 0; i < arr.length; i++ ){
+        arr.sort(([a, b], [c, d]) =>  d - b);
+        var row =`
+        <tr>
+            <td>${i + 1 + "."}</td>
+            <td>${arr[i][0]}</td>
+            <td>${arr[i][1]}</td>
+        </tr>
+        `
+        myTable.innerHTML += row
+    }
+    update_num()
+}
 
-document.getElementById("2_name").innerHTML = arr[2][0]
-document.getElementById("2_score").innerHTML = arr[2][1]
+function submitted_good(){
+    add(inp_1.value);
+    update()
+    upper()
+}
+
+function le_out(){
+    remove(inp_2.value);
+    update()
+    upper()
+}
+
+function left_click(){
+    [arr[num][1], arr[num + 1][1]] = change_the_score(arr[num][1], arr[num + 1][1], 0);
+    update()
+    update_num()
+    document.getElementById("btn_1").innerHTML = arr[num][0]
+    document.getElementById("btn_2").innerHTML = arr[num + 1][0]
+}
+
+function right_click(){
+    [arr[num][1], arr[num + 1][1]] = change_the_score(arr[num][1], arr[num + 1][1], 1);
+    update()
+    update_num()
+    document.getElementById("btn_1").innerHTML = arr[num][0]
+    document.getElementById("btn_2").innerHTML = arr[num + 1][0]  
+}
+
+

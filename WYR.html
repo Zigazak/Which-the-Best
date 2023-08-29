@@ -21,8 +21,8 @@
     <div class="medium"></div>
 
     <div class="clickers">
-        <button type="btn btn-block" class="left_button" onclick="">Name</button>
-        <button type="btn btn-block" class="right_button" onclick="">Name</button>
+        <button onclick="right_click()" id="btn_1" type="button" class="left_button"></button>
+        <button onclick="left_click()" id="btn_2" type="button" class="right_button" ></button>
     </div>
 
     <div class="medium"></div>
@@ -30,41 +30,37 @@
     <div class="Item_adding">
         <label for="add_to_list" >Items to add: </label>
         <input name = "table_item" id="add_to_list" type="text" placeholder="Ice Cream..."  class="center-align"/>
-        <input type="button" value="Submit" class="hit_em">
+        <button onclick="submitted_good()" type="button" value="Submit" class="hit_em">Push</button>
     </div>
 
     <div class="medium"></div>
 
-    <table class="le_table">
-        <tr> 
-            <th>Position: </th>
-            <th >Name: </th>
-            <th>Score: </th>
+    <table class="le_table" id="myTable">
+        <thead>
+            <tr> 
+                <th>Position: </th>
+                <th>Name: </th>
+                <th>Score: </th>
             </tr>
-        <tr> 
-            <td>1.</td>
-            <td  class="obj_name" id="1_name"></td>
-            <td class="obj_score" id="1_score"></td>
-        </tr>
-        <tr> 
-            <td>2.</td>
-            <td class="obj_name" id="2_name"></td>
-            <td class="obj_score"id="2_score"></td>
-        </tr>
+        </thead>
+        <tbody></tbody>
         </table>
     
     <div class="medium"></div>
 
-    <div class="Item_adding">
+    <div class="Item_removing">
         <label for="remove_to_list">Items to delete: </label>
-        <input id="remove_to_list" class="text_input" type="text" placeholder="Ice Cream...."  class="center-align"/>
-        <input type="button" value="Submit" class="hit_em">
+        <input name="table_item" id="remove_to_list" class="text_input" type="text" placeholder="Ice Cream...."  class="center-align"/>
+        <button onclick="le_out()" type="button" value="Submit" class="hit_em">Take</button>
     </div>
 
     <div class="medium"></div>
 
-    <button id="empty" onclick="return empty()" class="center-align" method="push">clear</button>
+    <div class="Item_removing">
+        <button id="empty" onclick="return empty()" class="center-align">clear</button>
+    </div>
 
+    
     <footer>
 
     </footer>

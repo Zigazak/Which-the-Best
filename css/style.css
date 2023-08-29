@@ -96,6 +96,10 @@ button:active .submit:active{
     text-align: center;
 }
 
+.Item_removing {
+    text-align: center;
+}
+
 .le_table {
     table-layout:auto;
     text-align: center;
@@ -111,9 +115,5 @@ label{
     transform: scale(1.2);
     background-color:rgba(67, 115, 255, 0.323);
     border-radius: 5px;
-
-}
-
-.hit_em:active {
 
 }
