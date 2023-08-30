@@ -115,5 +115,8 @@ label{
     transform: scale(1.2);
     background-color:rgba(67, 115, 255, 0.323);
     border-radius: 5px;
+}
 
+body{
+    font-family:monospace ;
 }
